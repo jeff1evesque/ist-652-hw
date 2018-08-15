@@ -81,3 +81,14 @@ plt.ylabel('average gift')
 
 ## save visualization
 plt.savefig('kmeans_child_gift')
+
+##
+## calculate average 'HV' aggregated on 'INCOME'
+##
+with open('summary.txt', 'wa') as f:
+    hv = df.groupby(['INCOME'])['HV'].mean()
+
+    f.write('income groups: {}\n\n'.format(df.groupby(['INCOME']).groups.keys()))
+
+    for value in hv:
+        f.write('average homevalue (per income): {:.2f}\n'.format(float(value)))
