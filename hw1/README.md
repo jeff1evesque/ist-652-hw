@@ -8,6 +8,7 @@ as well as the provided `Donors_data.csv`.
 The following packages are required to run `analysis.py`:
 
 ```bash
-sudo apt-get install -y python-dev python-pip
-sudo pip install pandas
+sudo apt-get install -y python-dev python-pip python-sklearn
+sudo apt-get build-dep -y python-matplotlib
+sudo pip install numpy pandas
 ```
