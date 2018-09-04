@@ -21,5 +21,6 @@ Vagrant.configure(2) do |config|
     ## consume data
     cd /vagrant
     python3 run.py consume
+    python3 run.py analyze
   SHELL
 end
