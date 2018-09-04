@@ -19,6 +19,7 @@ Vagrant.configure(2) do |config|
     mongod --fork --logpath /var/log/mongod.log --dbpath /data/db
 
     ## consume data
-    python3 run.py
+    cd /vagrant
+    python3 run.py consume
   SHELL
 end

@@ -20,5 +20,6 @@ def consume(source='apple--2018-09-03T13-11-54.json'):
     client.close()
 
 if __name__ == '__main__':
-    consume(*argv[1:])
+    if argv[1] and argv[1] == 'consume':
+        consume(*argv[2:])
     
