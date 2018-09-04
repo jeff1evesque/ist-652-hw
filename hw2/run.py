@@ -25,7 +25,14 @@ def analyze(outfile='report.json'):
     client = MongoClient('localhost', 27017)
     db = client.hw2
 
-    cursor = db.hw2col.find({})
+    cursor = db.hw2col.find({
+        'timestamp': {
+            '$regex':'^(2013-[09|10|11|12]|201[4-7]|2018-[01|02|03|04|05|06|07|08])',
+        },
+        'retweets': {
+            '$gte': '0',
+        },
+    })
 
     for document in cursor:
         print(document)
