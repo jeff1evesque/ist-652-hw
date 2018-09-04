@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+from sys import argv
 from pymongo import MongoClient
 
 def consume(source='apple--2018-09-03T13-11-54.json'):
@@ -13,7 +14,7 @@ def consume(source='apple--2018-09-03T13-11-54.json'):
         data = json.load(f)
 
     if data:
-        db.insert(data)
+        db.hw2col.insert(data)
 
     # close connection
     client.close()
